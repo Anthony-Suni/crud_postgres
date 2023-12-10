@@ -11,9 +11,7 @@ services:
       ConnectionStrings__DefaultConnection: "Host=db;Database=postgres;Username=postgres;Password=postgres"
     depends_on:
       - db
-    volumes:
-      - ./Views:/app/Views
-  
+
   db:
     container_name: db
     image: postgres:12
