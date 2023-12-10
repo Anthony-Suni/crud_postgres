@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Asegúrate de tener referencia al paquete Microsoft.AspNetCore.App -->
     <PackageReference Include="Microsoft.AspNetCore.App" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,3 +21,4 @@
   </ItemGroup>
 
 </Project>
+
