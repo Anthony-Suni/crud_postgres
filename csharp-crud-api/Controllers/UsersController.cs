@@ -17,12 +17,11 @@ public class UsersController : ControllerBase
   }
 
   // GET: api/users
-    [HttpGet]
-    public async Task<IActionResult> GetUsers()
-    {
-        var users = await _context.Users.Take(10).ToListAsync();
-        return View(users);  // Devolverá la vista asociada a esta acción
-    }
+  [HttpGet]
+  public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+  {
+    return await _context.Users.ToListAsync();
+  }
 
   // GET: api/users/5
   [HttpGet("{id}")]
