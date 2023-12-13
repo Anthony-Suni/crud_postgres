@@ -1,8 +1,11 @@
+using Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
 
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -19,8 +22,8 @@ builder.Services.AddCors(options =>
         builder =>
         {
             builder.AllowAnyOrigin()
-                .AllowAnyHeader()
-                .AllowAnyMethod();
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
         });
 });
 
@@ -35,11 +38,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 // Habilitar CORS
 app.UseCors("ReactPolicy");
+
+app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
