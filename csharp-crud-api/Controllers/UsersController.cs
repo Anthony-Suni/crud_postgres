@@ -79,8 +79,8 @@ public class UsersController : ControllerBase
     return NoContent();
   }
   [HttpGet("search")]
-public async Task<ActionResult<IEnumerable<User>>> SearchUsers([FromQuery] string query)
-{
+  public async Task<ActionResult<IEnumerable<User>>> SearchUsers([FromQuery] string query)
+  {
     var users = await _context.Users
         .Where(u => EF.Functions.Like(u.Name, $"%{query}%") || EF.Functions.Like(u.Email, $"%{query}%"))
         .ToListAsync();
@@ -91,7 +91,7 @@ public async Task<ActionResult<IEnumerable<User>>> SearchUsers([FromQuery] strin
     }
 
     return users;
-}
+  }
   // dummy endpoint to test the database connection
   [HttpGet("test")]
   public string Test()
