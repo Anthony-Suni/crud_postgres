@@ -1,5 +1,5 @@
 -- Crear la base de datos
-CREATE DATABASE Recomendaciones;
+CREATE DATABASE recomendaciones;
 
 -- Conectarse a la base de datos Recomendaciones
 \c Recomendaciones;
